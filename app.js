@@ -12,6 +12,20 @@ blueInput.addEventListener('input', onInput);
 
 function onInput(e){
 
+const num = parseInt(e.target.value);
+
+if(isNaN(num) || num < 0){
+    e.target.value = 0;
+}
+
+else if(num > 255){
+    e.target.value = 255;
+}
+
+else {
+    e.target.value = num;
+}
+
 document.body.style.background = `rgb(${redInput.value}, ${greenInput.value}, ${blueInput.value})`;
 
 }
